@@ -30,6 +30,10 @@ sudo sed -i "s/;extension=php_mbstring.dll/extension=php_mbstring.dll/g" "/etc/p
 sudo sed -i "s/;extension=php_openssl.dll/extension=php_openssl.dll/g" "/etc/php/5.6/apache2/php.ini"
 sudo sed -i "s/;extension=php_pdo_mysql.dll/extension=php_pdo_mysql.dll/g" "/etc/php/5.6/apache2/php.ini"
 
+# Activation des erreurs PHP
+sudo sed -i 's/display_errors = Off/display_errors = On/g' /etc/php/5.6/apache2/php.ini
+sudo sed -i 's/display_startup_errors = Off/display_startup_errors = On/g' /etc/php/5.6/apache2/php.ini
+
 # Activation des virtualhosts fournis
 sudo a2dissite 000-default
 sudo a2ensite virtualhosts
